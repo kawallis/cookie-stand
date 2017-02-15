@@ -28,3 +28,19 @@ li {
     color: white;
     padding-top: 110px;
 }
+
+table {
+    background-color: lightcoral;
+    color: white;
+    
+}
+
+table th {
+    padding: 5px;
+   
+}
+
+table td {
+    text-align: center;
+   
+}
