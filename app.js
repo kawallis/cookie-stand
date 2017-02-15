@@ -84,6 +84,7 @@ alki.render();
 
 var object_arr = [pike,seaTac,seattle,capitol,alki];
 var last_row = document.getElementById('seventh');
+
 function hour_tots (num) {
   var sum = 0;
   for (var i = 0; i < object_arr.length; i++){
