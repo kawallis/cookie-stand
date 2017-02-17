@@ -1,16 +1,32 @@
 * {
     font-family: sans-serif;
 }
+
+nav {
+   background-color: white;
+}
 ul {
     font-size: 25px;
-    display: inline-block;
-    color: navy;
-    text-align: center;   
+    color: #57BC90;
+    text-align: center;
+    display: inline-block;  
+    
 }
-
+#tophead {
+    color: #57BC90;
+    display: inline-block;
+    padding-left: 30px;
+    width: 50px;
+    height: 50px;
+   
+    border: 2px solid #57BC90;
+}
 li {
-    font-size: 15px;
-    color: navy; 
+    font-size: 15px; 
+    display: inline;
+    padding: 20px;
+    color: #57BC90;
+    float: right;
 }
 
 #stores {
@@ -18,17 +34,22 @@ li {
 }
 
 #picture {
-    background-image: url("salmon.png");
+    background-image: url("thewaterfront_L_28-2.jpg");
     width: 100%;
-    height: 700px;
-    text-align: center;
+    height: 700px;    
 }
 
-#picture h1 {
-    color: white;
-    padding-top: 110px;
+#fishpic {
+    float: clear;
+    width: 210px;
+    margin: 200px auto;
 }
 
+#fishpic h1 {
+    font-size: 50px;
+    border-radius: 40%;
+    color:#57BC90;;
+}
 table {
     background-color: lightcoral;
     color: white;
