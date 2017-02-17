@@ -29,6 +29,7 @@ function Store (store_name, min_cust,max_cust,avg_cookies_per_cust){
   this.max_cust = max_cust;
   this.avg_cookies_per_cust = avg_cookies_per_cust;
   this.daily_array = [];
+  this.total = 0;
 }
 
 Store.prototype.cust_per_hour = function () {
@@ -64,6 +65,7 @@ Store.prototype.render = function () {
   console.log(total);
   var td_total = document.createElement('td');
   td_total.textContent = total;
+  this.total = total;
   row_id.appendChild(td_total);
   arr_results.push(total);
   console.log(arr_results);
@@ -95,31 +97,65 @@ function clickHandler (event) {
     alert('please fill all fields');
   }else {
     var createdStore = new Store(storeName, min, max, acpc);
+    object_arr.push(createdStore);
+    clearrow();
     createdStore.render();
+    hourlyTotal();
   }
 }
-// var object_arr = [pike,seaTac,seattle,capitol,alki];
-// var last_row = document.getElementById('seventh');
 
-// function hour_tots (num) {
-//   var sum = 0;
-//   for (var i = 0; i < object_arr.length; i++){
-//     sum += object_arr[i].daily_array[num];
-//   }
-//   return sum;
-// };
 
-// for (i = 0; i < hours.length - 2; i++) {
-//   if (i === 0){
-//     var lasthead = document.createElement('th');
-//     lasthead.textContent = 'Hourly Totals';
-//     last_row.appendChild(lasthead);
-//     var data_sum = document.createElement('td');
-//     data_sum.textContent = hour_tots(i);
-//     last_row.appendChild(data_sum);
-//   }else {
-//     data_sum = document.createElement('td');
-//     data_sum.textContent = hour_tots(i);
-//     last_row.appendChild(data_sum);
-//   }
-// }
+var object_arr = [pike,seaTac,seattle,capitol,alki];
+
+function hourlyTotal () {
+  var table = document.getElementById('table');
+  var last_row = document.createElement('tr');
+  last_row.id = 'lastrow';
+  table.appendChild(last_row);
+
+  function hour_tots (num) {
+    var sum = 0;
+    for (var i = 0; i < object_arr.length; i++){
+      sum += object_arr[i].daily_array[num];
+    }
+    return sum;
+  };
+
+  for (var i = 0; i < hours.length - 1; i++) {
+    if (i === 0){
+      var lasthead = document.createElement('th');
+      lasthead.textContent = 'Hourly Totals';
+      last_row.appendChild(lasthead);
+      var data_sum = document.createElement('td');
+      data_sum.textContent = hour_tots(i);
+      last_row.appendChild(data_sum);
+    }else if (i === hours.length - 2) {
+      data_sum = document.createElement('td');
+      //add new function
+      data_sum.textContent = lastTotal();
+      last_row.appendChild(data_sum);
+    }
+    else {
+      data_sum = document.createElement('td');
+      data_sum.textContent = hour_tots(i);
+      last_row.appendChild(data_sum);
+    }
+  }
+}
+
+hourlyTotal();
+
+
+function clearrow () {
+  var lastrow = document.getElementById('lastrow');
+  console.log(lastrow);
+  lastrow.textContent = '';
+}
+
+function lastTotal () {
+  var sum = 0;
+  for (var i = 0; i < object_arr.length; i++){
+    sum += object_arr[i].total;
+  }
+  return sum;
+}
