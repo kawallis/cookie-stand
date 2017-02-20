@@ -6,19 +6,32 @@ nav {
    background-color: white;
 }
 ul {
+    display: inline-block;  
+    float: right;
+    
+}
+ul li a{
     font-size: 25px;
     color: #57BC90;
     text-align: center;
     display: inline-block;  
-    
+    float: right;
+    text-decoration: none;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+ul li a:hover {
+   color: white;
+   background-color: #57BC90;
 }
 #tophead {
     color: #57BC90;
     display: inline-block;
     padding-left: 30px;
+    padding-right: 30px;
     width: 50px;
     height: 50px;
-   
     border: 2px solid #57BC90;
 }
 li {
@@ -26,7 +39,7 @@ li {
     display: inline;
     padding: 20px;
     color: #57BC90;
-    float: right;
+    
 }
 
 #stores {
@@ -50,9 +63,56 @@ li {
     border-radius: 40%;
     color:#57BC90;;
 }
-table {
-    background-color: lightcoral;
+
+#about-container {
+    float: left;
+    margin-top: 250px;
+    width: 35%;
+}
+
+.columns {
+    height: 250px;
+    width: 250px;
+    display: block;
+    margin: 50px;
+    border: 2px solid #57BC90;
+}
+
+#step-container {
+    width: 45%;
+    float: left;
+    padding-bottom: 100px;
+    color: #57BC90;
+    margin-top: 250px;
+}
+
+.number {
+    font-size: 60px;
+    padding-top: 20px;
+}
+footer {
+    
+    clear: left;
+    display: block;
+    
+}
+
+footer ul {
+    width: 100%;
+}
+
+footer ul li {
+    background-color: #57BC90;
     color: white;
+    display: block;
+    text-align: center;
+}
+/*second page css*/
+table {
+    background-color: #57BC90;
+    color: white;
+    margin-top: 100px;
+    height: 450px;
     
 }
 
@@ -64,4 +124,50 @@ table th {
 table td {
     text-align: center;
    
+}
+
+/*the about page */
+#family-container {
+    margin: 150px 50px;
+    text-align: center;
+}
+
+#fam {
+    width: 40%;
+    border: 2px solid #57BC90;
+}
+
+#family-container p {
+    display: inline-block;
+    width: 400px;
+      color: #57BC90;
+      margin: 20px;
+}
+
+#fish {
+    text-align: center;
+    width: 100%;
+}
+
+#fish img {
+    width: 200px;
+    height: 100px;
+}
+
+/*contact page styling */
+
+#contact-container {
+    width: 100%;
+    height: 500px;
+    background-image: url("assets/salmon.png");
+    text-align: center;
+    opacity: .7;
+}
+
+#contact-container p {
+    width: 200px;
+    text-align: center;
+    padding: 150px 500px;
+    color: #57BC90;
+    opacity: none;
 }

@@ -96,9 +96,9 @@ function clickHandler (event) {
   if (storeName === '' || isNaN(min) === true || isNaN(max) === true || isNaN(acpc) === true){
     alert('please fill all fields');
   }else {
+    clearrow();
     var createdStore = new Store(storeName, min, max, acpc);
     object_arr.push(createdStore);
-    clearrow();
     createdStore.render();
     hourlyTotal();
   }
@@ -106,7 +106,7 @@ function clickHandler (event) {
 
 
 var object_arr = [pike,seaTac,seattle,capitol,alki];
-
+hourlyTotal();
 function hourlyTotal () {
   var table = document.getElementById('table');
   var last_row = document.createElement('tr');
@@ -143,7 +143,7 @@ function hourlyTotal () {
   }
 }
 
-hourlyTotal();
+
 
 
 function clearrow () {
